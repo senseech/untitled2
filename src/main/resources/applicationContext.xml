@@ -14,7 +14,10 @@
     </bean>
 
     <bean id="musicBean2"
-          class="org.example.ClassicalMusic">
+          class="org.example.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
     </bean>
 
     <bean id="musicBean3"
@@ -22,7 +25,7 @@
     </bean>
 
 
-    <bean id="musicPlayer"
+    <!--<bean id="musicPlayer"
         class="org.example.MusicPlayer"
         scope="prototype">
         <property name="musicList">
@@ -35,6 +38,6 @@
 
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+    </bean>-->
 
 </beans>
